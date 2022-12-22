@@ -15,9 +15,9 @@ def _normalize_user_answer(user_answer: str) -> str:
 
 def get_winner(user_choice: str, bot_choice: str) -> str:
     user_choice: str = _normalize_user_answer(user_choice)
-    rules: dict[str, str] = {'rock': 'scissors',
-                             'scissors': 'paper',
-                             'paper': 'rock'}
+    rules: dict = {'rock': 'scissors',
+                   'scissors': 'paper',
+                   'paper': 'rock'}
     if user_choice == bot_choice:
         return 'nobody_won'
     elif rules[user_choice] == bot_choice:
