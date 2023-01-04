@@ -2,7 +2,7 @@ import asyncio
 import pickle
 import os
 
-def open_dict(file_name):
+def open_dict(file_name) -> dict:
     try:
         with open(file_name, 'rb') as f:
             user: dict = pickle.load(f)
@@ -14,7 +14,7 @@ def open_dict(file_name):
         print('Словарь прочитан с ошибками', e)
 
 
-async def dump_dict(user_dict: dict):
+async def dump_dict(user_dict: dict) -> None:
     while True:
         print(user_dict)
         with open('data.pickle', 'wb') as f:
